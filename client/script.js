@@ -96,7 +96,7 @@ const handleSubmit = async (e) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      messages: `${data.get('prompt')}`,
+      messages,
     }),
   });
 
@@ -106,9 +106,14 @@ const handleSubmit = async (e) => {
   if (response.ok) {
     const data = await response.json();
 
-    console.log(data);
+    console.log(data.completion.content);
+    let newAssistantMessage = {
+      role: 'assistant',
+      content: `${data.completion.content}`,
+    };
+    messages.push(newAssistantMessage);
 
-    typeText(messageDiv, res);
+    typeText(messageDiv, data.completion.content);
   } else {
     const err = await response.text();
     messageDiv.innerHTML = 'Something went wrong';
