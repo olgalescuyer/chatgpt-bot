@@ -98,7 +98,6 @@ const handleSubmit = async (e) => {
   if (response.ok) {
     const data = await response.json();
 
-    console.log(data.completion.content);
     let newAssistantMessage = {
       role: 'assistant',
       content: `${data.completion.content}`,
@@ -116,7 +115,7 @@ const handleSubmit = async (e) => {
 
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('keyup', (e) => {
-  if (e.keyCode === 13) {
+  if (e.key === 'Enter') {
     handleSubmit(e);
   }
 });
