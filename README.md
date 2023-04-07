@@ -1,4 +1,4 @@
-# designgpt-bot
+# DesignGPT-bot
 
 1. You need an API key. Select Get started here : https://openai.com/product
 
