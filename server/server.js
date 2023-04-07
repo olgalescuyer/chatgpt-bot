@@ -21,8 +21,6 @@ const port = 5000;
 app.post('/', async (req, res) => {
   const { messages } = req.body;
 
-  console.log('======================', messages);
-
   const completion = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     messages: [
@@ -31,7 +29,6 @@ app.post('/', async (req, res) => {
         content: 'You are DesignGPT helpful assistant ux design chatbot',
       },
       ...messages,
-      // { role: 'user', content: `${messages}` },
     ],
   });
 

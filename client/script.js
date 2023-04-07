@@ -75,14 +75,6 @@ const handleSubmit = async (e) => {
 
   loader(messageDiv);
 
-  // let messages = [
-  //   { role: 'user', content: 'Where was it played?' },
-  //   {
-  //     role: 'assistant',
-  //     content: 'The Losa Angeles Dodgers won the World Series in 2020',
-  //   },
-  // ];
-
   let messages = [];
   const newMessage = { role: 'user', content: `${data.get('prompt')}` };
   messages.push(newMessage);
