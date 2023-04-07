@@ -37,8 +37,6 @@ app.post('/', async (req, res) => {
   });
 });
 
-// console.log(completion.data.choices[0].message);
-
 app.listen(port, () => {
   console.log(`listenning at http://localhost:${port}`);
 });
